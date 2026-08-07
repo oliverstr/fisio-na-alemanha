@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/organic-10673cb5-419f-440b-9842-5b1f04494628/styles.css">
+  <script src="_ds/organic-10673cb5-419f-440b-9842-5b1f04494628/_ds_bundle.js"></script>
+  <style>
+    :root {
+      --leading: 28px;
+      --half: 14px;
+      --edge: clamp(20px, 5vw, 72px);
+      --measure: 58ch;
+    }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body { margin: 0; text-wrap: pretty; overflow-x: clip; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 var(--edge); }
+    .nav { padding-inline: max(var(--edge), calc((100% - 1200px) / 2 + var(--edge))); }
+    .nav a { white-space: nowrap; }
+    a, a:visited { color: var(--color-accent-700); }
+    a:hover { color: var(--color-accent-600); }
+    @media (max-width: 600px) { .nav a { display: none; } }
+
+    .kicker {
+      display: block; font-size: 13px; line-height: var(--half);
+      letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600;
+      color: var(--color-accent-700);
+      margin: 0 0 calc(var(--leading) - var(--half));
+    }
+
+    /* Hero */
+    .hero { position: relative; padding: calc(4 * var(--leading)) 0 calc(3 * var(--leading)); }
+    .hero::before {
+      content: ""; position: absolute; right: -180px; top: -220px;
+      width: 420px; height: 420px; border-radius: 50%;
+      background: var(--color-accent-2-200); pointer-events: none; z-index: -1;
+    }
+    @media (max-width: 1420px) { .hero::before { right: 0; } }
+    .display {
+      font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+      font-size: clamp(40px, 5.8vw, 76px);
+      line-height: clamp(43px, 6.26vw, 82px);
+      letter-spacing: 0; margin: 0;
+      margin-left: -0.028em;
+      text-box: trim-both cap alphabetic;
+    }
+    .display .line { display: block; }
+    .hero .sub {
+      font-size: 17px; line-height: var(--leading); max-width: 52ch;
+      margin: calc(1.5 * var(--leading) - 1cap) 0 0;
+      text-box: trim-both cap alphabetic;
+      color: color-mix(in srgb, var(--color-text) 80%, transparent);
+    }
+    .hero .row { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--leading); }
+
+    /* Bed / circles */
+    .bed {
+      position: relative; padding: calc(1.5 * var(--leading)) 0 calc(2.5 * var(--leading));
+      min-height: calc(17 * var(--leading));
+    }
+    .seed {
+      position: absolute; border-radius: 50%; aspect-ratio: 1;
+      display: grid; place-content: center; text-align: center;
+      padding: var(--leading); box-sizing: border-box;
+    }
+    .seed-a { width: 220px; left: 64px; top: calc(2.5 * var(--leading)); background: var(--color-accent-100); }
+    .seed-b { width: 180px; left: 196px; top: calc(9 * var(--leading)); background: var(--color-accent-200); }
+    .seed-c { width: 300px; right: 96px; top: calc(-3.5 * var(--leading)); background: var(--color-accent-2-300); }
+    .seed-d { width: 170px; right: 316px; top: calc(4.5 * var(--leading)); background: var(--color-accent-2-100); }
+    .seed .stat-num {
+      font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+      font-size: clamp(28px, 3.2vw, 44px); line-height: calc(2 * var(--leading));
+      margin: 0; text-box: trim-both cap alphabetic;
+    }
+    .seed-a .stat-num, .seed-b .stat-num { color: var(--color-accent-700); }
+    .seed-d .stat-num { color: var(--color-accent-2-700); }
+    .seed-c .stat-num { color: var(--color-accent-2-800); }
+    .seed .stat-label {
+      font-size: 13px; line-height: var(--half); letter-spacing: 0.06em;
+      text-transform: uppercase; font-weight: 600;
+      color: color-mix(in srgb, var(--color-text) 70%, transparent);
+      margin: var(--half) 0 0; max-width: 15ch; text-wrap: balance;
+    }
+
+    /* Features */
+    .features { padding: calc(3 * var(--leading)) 0 calc(2.5 * var(--leading)); }
+    .feature {
+      display: grid; grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+      gap: var(--leading) clamp(24px, 4vw, 72px); align-items: baseline;
+      padding: calc(1.25 * var(--leading)) 0;
+    }
+    .f-title {
+      position: relative; font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+      font-size: 26px; line-height: var(--leading);
+      margin: 0; text-box: trim-both cap alphabetic;
+    }
+    .f-title::before {
+      content: ""; position: absolute; left: -36px; top: calc(0.5cap - 9px);
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--color-accent);
+    }
+    @media (max-width: 1280px) { .f-title::before { display: none; } }
+    .f-copy {
+      font-size: 15.5px; line-height: var(--leading); margin: 0;
+      color: color-mix(in srgb, var(--color-text) 78%, transparent);
+      max-width: 52ch; text-box: trim-both cap alphabetic;
+    }
+
+    /* About split */
+    .about { padding: calc(3 * var(--leading)) 0; }
+    .about-grid {
+      display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+      gap: var(--leading) clamp(32px, 6vw, 96px); align-items: center;
+    }
+    .about-photo-wrap {
+      display: flex; justify-content: flex-start;
+    }
+    .about-circle {
+      width: clamp(240px, 32vw, 380px); height: clamp(240px, 32vw, 380px);
+      border-radius: 50%; overflow: hidden; flex-shrink: 0;
+      background: var(--color-accent-2-200);
+      box-shadow: var(--shadow-md);
+    }
+    .about-circle img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
+      filter: saturate(0.75) contrast(0.9) brightness(1.05);
+    }
+    .about-title {
+      font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+      font-size: clamp(24px, 2.8vw, 36px); line-height: calc(1.5 * var(--leading));
+      margin: 0; text-box: trim-both cap alphabetic;
+    }
+    .about-copy {
+      font-size: 15.5px; line-height: var(--leading); margin: calc(var(--leading) - 1cap) 0 0;
+      color: color-mix(in srgb, var(--color-text) 80%, transparent);
+      max-width: 52ch; text-box: trim-both cap alphabetic;
+    }
+    .about-copy + .about-copy { margin-top: var(--leading); }
+    @media (max-width: 720px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo-wrap { justify-content: center; }
+    }
+
+    /* Services */
+    .services { padding: calc(3 * var(--leading)) 0; }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(16px, 2vw, 28px); margin-top: calc(2 * var(--leading));
+    }
+    .svc-card {
+      background: var(--color-surface); border-radius: var(--radius-lg);
+      padding: calc(1.5 * var(--leading)) clamp(20px, 3vw, 36px);
+      display: flex; flex-direction: column; gap: var(--leading);
+      position: relative; overflow: hidden;
+    }
+    .svc-card.featured {
+      background: var(--color-accent-2-100);
+    }
+    .svc-card.featured::after {
+      content: "Mais completo"; position: absolute; top: 18px; right: -28px;
+      background: var(--color-accent); color: #fff;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 4px 40px; transform: rotate(35deg); white-space: nowrap;
+    }
+    .svc-name {
+      font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+      font-size: 22px; line-height: var(--leading); margin: 0;
+      text-box: trim-both cap alphabetic;
+    }
+    .svc-price {
+      font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+      font-size: clamp(32px, 3.5vw, 48px); line-height: 1;
+      color: var(--color-accent-700); margin: 0;
+    }
+    .svc-price small {
+      font-family: var(--font-body); font-size: 14px;
+      color: color-mix(in srgb, var(--color-text) 60%, transparent);
+      font-weight: 400;
+    }
+    .svc-includes {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; flex-direction: column; gap: var(--space-3);
+      flex: 1;
+    }
+    .svc-includes li {
+      font-size: 14.5px; line-height: var(--leading);
+      color: color-mix(in srgb, var(--color-text) 82%, transparent);
+      display: flex; gap: var(--space-3); align-items: baseline;
+    }
+    .svc-includes li::before {
+      content: ""; display: inline-block; flex-shrink: 0;
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--color-accent-400);
+      position: relative; top: -1px;
+    }
+
+    /* FAQ */
+    .faq { padding: calc(3 * var(--leading)) 0 calc(2 * var(--leading)); }
+    .faq-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--leading) clamp(24px, 5vw, 80px); margin-top: calc(2 * var(--leading)); }
+    .faq-q { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 18px; line-height: var(--leading); margin: 0 0 var(--half); text-box: trim-both cap alphabetic; }
+    .faq-a { font-size: 15px; line-height: var(--leading); margin: 0; color: color-mix(in srgb, var(--color-text) 76%, transparent); }
+
+    /* Close patch */
+    .close { padding: 0 0 calc(2 * var(--leading)); }
+    .patch {
+      background: var(--color-accent-2-100);
+      border-radius: calc(2 * var(--radius-lg));
+      padding: calc(2.5 * var(--leading)) clamp(24px, 5vw, 72px);
+      display: grid; grid-template-columns: 1fr auto; gap: var(--leading) clamp(24px, 5vw, 64px); align-items: center;
+    }
+    .patch h3 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 32px; line-height: calc(1.5 * var(--leading)); margin: 0; text-box: trim-both cap alphabetic; }
+    .patch .sub { font-size: 15.5px; line-height: var(--leading); color: color-mix(in srgb, var(--color-text) 78%, transparent); margin: calc(var(--leading) - 1cap) 0 0; max-width: 44ch; text-box: trim-both cap alphabetic; }
+    .patch-cta { flex-shrink: 0; text-align: right; }
+
+    footer { padding: calc(2 * var(--leading)) 0; font-size: 13px; line-height: var(--leading); color: color-mix(in srgb, var(--color-text) 60%, transparent); }
+
+    /* Responsive */
+    @media (max-width: 1080px) {
+      .bed { min-height: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--leading) var(--half); justify-items: center; padding-bottom: calc(3.5 * var(--leading)); }
+      .seed { position: static; width: min(clamp(160px, 44vw, 220px), 100%); }
+      .seed-c { width: min(clamp(180px, 50vw, 270px), 100%); }
+      .seed-b, .seed-d { transform: translateY(var(--leading)); }
+    }
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: 1fr; max-width: 480px; }
+      .patch { grid-template-columns: 1fr; }
+      .patch-cta { text-align: left; }
+    }
+    @media (max-width: 880px) {
+      .feature { grid-template-columns: 1fr; gap: var(--half); }
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .hero { padding-top: calc(2.5 * var(--leading)); }
+      .hero::before { width: 280px; height: 280px; top: -160px; }
+    }
+  </style>
+</helmet>
+
+<nav class="nav">
+  <span class="nav-brand">Fisio na Alemanha</span>
+  <a href="#diferenciais">Diferenciais</a>
+  <a href="#servicos">Serviços</a>
+  <a href="#faq">Dúvidas</a>
+  <a href="#contato" class="btn btn-primary" style="text-decoration:none;">Agendar conversa</a>
+</nav>
+
+<div class="wrap">
+
+  <section class="hero">
+    <span class="kicker">Consultoria especializada</span>
+    <h1 class="display">
+      <span class="line">Da formação brasileira</span>
+      <span class="line">à carreira na Alemanha.</span>
+    </h1>
+    <p class="sub">Sou fisioterapeuta brasileira, vivo na Alemanha e passei por todo esse processo. Ajudo você a reconhecer seu diploma e iniciar sua carreira aqui — sem perder tempo com burocracia desnecessária e com tudo explicado em português.</p>
+    <div class="row">
+      <a href="#contato" class="btn btn-primary" style="text-decoration:none;">Agendar conversa gratuita</a>
+      <a href="#servicos" class="btn btn-ghost" style="text-decoration:none;">Ver serviços</a>
+    </div>
+  </section>
+
+  <section class="bed" aria-label="Números rápidos">
+    <div class="seed seed-a"><p class="stat-num">1:1</p><p class="stat-label">Atendimento individual</p></div>
+    <div class="seed seed-b"><p class="stat-num">3</p><p class="stat-label">Pacotes disponíveis</p></div>
+    <div class="seed seed-c"><p class="stat-num">150€</p><p class="stat-label">Sessão estratégica para começar</p></div>
+    <div class="seed seed-d"><p class="stat-num">PT</p><p class="stat-label">Tudo em português</p></div>
+  </section>
+
+  <section class="features" id="diferenciais">
+    <span class="kicker">Por que funciona</span>
+    <div class="feature">
+      <h2 class="f-title">Experiência real, não teoria</h2>
+      <p class="f-copy">Passei pelo processo de reconhecimento profissional na Alemanha. Sei quais documentos pedem, onde a burocracia trava e o que ninguém te conta antes de começar. Falo por experiência própria, não por suposição.</p>
+    </div>
+    <div class="feature">
+      <h2 class="f-title">Burocracia sem surpresas</h2>
+      <p class="f-copy">O processo tem etapas definidas — mas é fácil se perder sem um guia. Você recebe um checklist personalizado para o seu perfil, com os documentos certos, na ordem certa, sem voltas desnecessárias.</p>
+    </div>
+    <div class="feature">
+      <h2 class="f-title">Acompanhamento de perto</h2>
+      <p class="f-copy">Não é uma lista de tarefas que você recebe e some. Estou disponível para dúvidas durante todo o processo — uma pessoa real, que conhece a realidade brasileira e a alemã, do seu lado.</p>
+    </div>
+  </section>
+
+  <section class="about" id="sobre">
+    <div class="about-grid">
+      <div class="about-photo-wrap">
+        <div class="about-circle">
+          <img src="uploads/IMG_6719.jpeg" alt="Foto da consultora" />
+        </div>
+      </div>
+      <div>
+        <span class="kicker">Quem sou</span>
+        <h2 class="about-title">Sou fisioterapeuta brasileira vivendo e trabalhando na Alemanha.</h2>
+        <p class="about-copy">Passei por todo o processo de reconhecimento profissional — os documentos, as burocracias, as dúvidas que ninguém conseguia responder direito. Sei o que é difícil, o que surpreende e o que ninguém te conta antes de começar.</p>
+        <p class="about-copy">Criei essa consultoria porque quero que outros fisioterapeutas brasileiros cheguem mais preparados do que eu cheguei. Com um caminho claro, em português, e com alguém real do seu lado.</p>
+        <div style="margin-top:var(--leading);display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <span class="tag tag-accent-2">Fisioterapeuta</span>
+          <span class="tag tag-accent-2">Baseada na Alemanha</span>
+          <span class="tag tag-neutral">Atendimento em português</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="servicos">
+    <span class="kicker">Serviços</span>
+    <h2 style="font-family:var(--font-heading);font-size:clamp(28px,3vw,40px);line-height:calc(1.5*var(--leading));margin:0 0 0;max-width:26ch;text-box:trim-both cap alphabetic;">Escolha o nível de acompanhamento certo para você.</h2>
+    <div class="services-grid">
+
+      <div class="svc-card">
+        <div>
+          <p class="svc-name">Sessão Estratégica</p>
+          <p style="font-size:13px;margin:var(--space-2) 0 0;color:color-mix(in srgb,var(--color-text) 60%,transparent);line-height:var(--half);">Ideal para quem está começando a pesquisar</p>
+        </div>
+        <p class="svc-price">150€ <small>/ sessão única</small></p>
+        <ul class="svc-includes">
+          <li>Análise do seu perfil profissional</li>
+          <li>Mapa das etapas do reconhecimento</li>
+          <li>Principais dúvidas respondidas</li>
+          <li>Indicação dos próximos passos</li>
+        </ul>
+        <a href="#contato" class="btn btn-secondary btn-block" style="text-decoration:none;text-align:center;">Agendar sessão</a>
+      </div>
+
+      <div class="svc-card featured">
+        <div>
+          <p class="svc-name">Acompanhamento do Reconhecimento</p>
+          <p style="font-size:13px;margin:var(--space-2) 0 0;color:color-mix(in srgb,var(--color-text) 60%,transparent);line-height:var(--half);">Do início à aprovação do diploma</p>
+        </div>
+        <p class="svc-price">700–900€ <small>/ processo completo</small></p>
+        <ul class="svc-includes">
+          <li>Análise detalhada do perfil</li>
+          <li>Checklist de documentos personalizado</li>
+          <li>Orientação em cada etapa do processo</li>
+          <li>Acompanhamento durante todo o trâmite</li>
+          <li>Suporte por mensagem para dúvidas</li>
+        </ul>
+        <a href="#contato" class="btn btn-primary btn-block" style="text-decoration:none;text-align:center;">Agendar conversa</a>
+      </div>
+
+      <div class="svc-card">
+        <div>
+          <p class="svc-name">Pacote Completo</p>
+          <p style="font-size:13px;margin:var(--space-2) 0 0;color:color-mix(in srgb,var(--color-text) 60%,transparent);line-height:var(--half);">Para quem quer chegar preparado em tudo</p>
+        </div>
+        <p class="svc-price">1.500€ <small>/ pacote</small></p>
+        <ul class="svc-includes">
+          <li>Tudo do acompanhamento do reconhecimento</li>
+          <li>Currículo em padrão alemão (Lebenslauf)</li>
+          <li>Preparação para entrevistas de emprego</li>
+          <li>Orientação para chegada na Alemanha</li>
+          <li>Primeiros passos na carreira local</li>
+        </ul>
+        <a href="#contato" class="btn btn-secondary btn-block" style="text-decoration:none;text-align:center;">Agendar conversa</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <span class="kicker">Dúvidas frequentes</span>
+    <div class="faq-grid">
+      <div>
+        <p class="faq-q">Meu diploma é válido na Alemanha?</p>
+        <p class="faq-a">Diplomas brasileiros não têm reconhecimento automático. É necessário passar por um processo de Anerkennung (reconhecimento profissional) junto ao órgão competente do estado onde você vai trabalhar. Esse processo é o foco da consultoria.</p>
+      </div>
+      <div>
+        <p class="faq-q">Quanto tempo leva o processo?</p>
+        <p class="faq-a">Em média, de 6 a 12 meses — dependendo do estado, da completude dos documentos e de eventuais complementações exigidas. Com orientação adequada, você evita atrasos evitáveis e sabe o que esperar em cada fase.</p>
+      </div>
+      <div>
+        <p class="faq-q">Preciso falar alemão para começar?</p>
+        <p class="faq-a">Para o processo de reconhecimento, normalmente exige-se comprovação de nível B2 de alemão. Mas você pode começar a organizar documentos e entender o processo antes disso. A consultoria é toda em português.</p>
+      </div>
+      <div>
+        <p class="faq-q">Como funciona a conversa inicial?</p>
+        <p class="faq-a">É uma sessão por videochamada onde avaliamos seu caso, explico o processo e respondemos suas dúvidas. Você sai com clareza sobre os próximos passos, independentemente de contratar um pacote depois.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="close" id="contato">
+    <div class="patch">
+      <div>
+        <h3>Pronta para começar a conversa?</h3>
+        <p class="sub">Agende uma conversa sem compromisso. Em 30 minutos você entende o que o processo exige e se essa consultoria faz sentido para o seu momento.</p>
+        <div style="margin-top:var(--leading);display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center;">
+          <a href="https://calendly.com" target="_blank" rel="noopener" class="btn btn-primary" style="text-decoration:none;">Agendar pelo Calendly</a>
+          <a href="https://wa.me/" target="_blank" rel="noopener" class="btn btn-ghost" style="text-decoration:none;">Falar pelo WhatsApp</a>
+        </div>
+      </div>
+      <div style="background:var(--color-accent-2-200);border-radius:50%;width:160px;height:160px;display:grid;place-content:center;text-align:center;flex-shrink:0;padding:20px;box-sizing:border-box;">
+        <p style="font-family:var(--font-heading);font-size:15px;line-height:22px;margin:0;color:var(--color-accent-2-800);">Conversa inicial gratuita</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-3);">
+    <span>© 2026 Fisio na Alemanha</span>
+    <span>Atendimento exclusivo em português · Para fisioterapeutas brasileiros</span>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>
