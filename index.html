@@ -142,6 +142,9 @@
       max-width: 52ch; text-box: trim-both cap alphabetic;
     }
     .about-copy + .about-copy { margin-top: var(--leading); }
+    .about-copy.about-lead { font-size: 18px; color: var(--color-text); }
+    .about-copy.about-cta { font-weight: 600; color: var(--color-text); margin-top: calc(1.5 * var(--leading)); }
+    .about-actions { margin-top: var(--leading); }
     @media (max-width: 720px) {
       .about-grid { grid-template-columns: 1fr; }
       .about-photo-wrap { justify-content: center; }
@@ -298,11 +301,14 @@
       </div>
       <div>
         <span class="kicker">Quem sou</span>
-        <h2 class="about-title">Oi, eu sou a Flávia.</h2>
-        <p class="about-copy">Sou fisioterapeuta, brasileira, e hoje vivo e trabalho na Alemanha. Mas até chegar aqui, passei por um caminho que eu queria que alguém tivesse me explicado antes.</p>
+        <h2 class="about-title">Já estive no seu lugar.</h2>
+        <p class="about-copy about-lead">Sou a Flávia, fisioterapeuta brasileira, e hoje vivo e trabalho na Alemanha. Mas até chegar aqui, passei por um caminho que eu queria que alguém tivesse me explicado antes.</p>
         <p class="about-copy">Os documentos, os prazos, as respostas diferentes dependendo de quem eu perguntava. Muitas vezes eu me senti perdida, e cheguei a pensar em desistir.</p>
         <p class="about-copy">Hoje eu sei como esse processo funciona, e é por isso que criei esta consultoria: para que você não precise descobrir tudo sozinho, como eu descobri. Eu não faço o reconhecimento por você, porque quem decide é o órgão alemão. Mas eu te mostro o caminho, te ajudo a organizar cada etapa e fico do seu lado, do começo ao fim.</p>
-        <p class="about-copy">Se você sonha em trabalhar como fisioterapeuta na Alemanha, vem conversar comigo.</p>
+        <p class="about-copy about-cta">Se você sonha em trabalhar como fisioterapeuta na Alemanha, vem conversar comigo.</p>
+        <div class="about-actions">
+          <a href="#contato" class="btn btn-primary" style="text-decoration:none;">Agendar conversa gratuita</a>
+        </div>
         <div style="margin-top:var(--leading);display:flex;gap:var(--space-3);flex-wrap:wrap;">
           <span class="tag tag-accent-2">Fisioterapeuta</span>
           <span class="tag tag-accent-2">Baseada na Alemanha</span>
