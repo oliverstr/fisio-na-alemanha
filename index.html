@@ -183,6 +183,15 @@
       color: color-mix(in srgb, var(--color-text) 60%, transparent);
       font-weight: 400;
     }
+    .svc-old {
+      font-family: var(--font-body); font-size: 0.5em; font-weight: 400;
+      text-decoration: line-through; margin-right: 6px;
+      color: color-mix(in srgb, var(--color-text) 50%, transparent);
+    }
+    .svc-note {
+      font-size: 13px; line-height: var(--half); margin: calc(-0.5 * var(--leading)) 0 0;
+      color: color-mix(in srgb, var(--color-text) 62%, transparent);
+    }
     .svc-includes {
       list-style: none; margin: 0; padding: 0;
       display: flex; flex-direction: column; gap: var(--space-3);
@@ -269,7 +278,7 @@
   <section class="bed" aria-label="Números rápidos">
     <div class="seed seed-a"><p class="stat-num">1:1</p><p class="stat-label">Atendimento individual</p></div>
     <div class="seed seed-b"><p class="stat-num">3</p><p class="stat-label">Pacotes disponíveis</p></div>
-    <div class="seed seed-c"><p class="stat-num">150€</p><p class="stat-label">Sessão estratégica para começar</p></div>
+    <div class="seed seed-c"><p class="stat-num">69€</p><p class="stat-label">Sessão estratégica de lançamento</p></div>
     <div class="seed seed-d"><p class="stat-num">PT</p><p class="stat-label">Tudo em português</p></div>
   </section>
 
@@ -315,6 +324,7 @@
   <section class="services" id="servicos">
     <span class="kicker">Serviços</span>
     <h2 style="font-family:var(--font-heading);font-size:clamp(28px,3vw,40px);line-height:calc(1.5*var(--leading));margin:0 0 0;max-width:26ch;text-box:trim-both cap alphabetic;">Escolha o nível de acompanhamento certo para você.</h2>
+    <div style="margin-top:var(--leading);"><span class="tag tag-accent-2">Preço de lançamento · válido para as primeiras 10 clientes</span></div>
     <div class="services-grid">
 
       <div class="svc-card">
@@ -322,10 +332,11 @@
           <p class="svc-name">Sessão Estratégica</p>
           <p style="font-size:13px;margin:var(--space-2) 0 0;color:color-mix(in srgb,var(--color-text) 60%,transparent);line-height:var(--half);">Ideal para quem está começando a pesquisar</p>
         </div>
-        <p class="svc-price">150€ <small>/ sessão única</small></p>
+        <p class="svc-price"><span class="svc-old">99€</span>69€ <small>/ sessão única</small></p>
+        <p class="svc-note">Valor abatido se você contratar um dos pacotes depois.</p>
         <ul class="svc-includes">
           <li>Análise do seu perfil profissional</li>
-          <li>Mapa das etapas do reconhecimento</li>
+          <li>Mapa personalizado das etapas do reconhecimento (em PDF)</li>
           <li>Principais dúvidas respondidas</li>
           <li>Indicação dos próximos passos</li>
         </ul>
@@ -337,13 +348,14 @@
           <p class="svc-name">Acompanhamento do Reconhecimento</p>
           <p style="font-size:13px;margin:var(--space-2) 0 0;color:color-mix(in srgb,var(--color-text) 60%,transparent);line-height:var(--half);">Do início à aprovação do diploma</p>
         </div>
-        <p class="svc-price">700–900€ <small>/ processo completo</small></p>
+        <p class="svc-price"><span class="svc-old">700€</span>490€ <small>/ processo completo</small></p>
+        <p class="svc-note">Em até 3x. Preço fixo, sem surpresas.</p>
         <ul class="svc-includes">
           <li>Análise detalhada do perfil</li>
           <li>Checklist de documentos personalizado</li>
           <li>Orientação em cada etapa do processo</li>
           <li>Acompanhamento durante todo o trâmite</li>
-          <li>Suporte por mensagem para dúvidas</li>
+          <li>Suporte por mensagem por 6 meses (resposta em até 48h úteis)</li>
         </ul>
         <a href="#contato" class="btn btn-primary btn-block" style="text-decoration:none;text-align:center;">Agendar conversa</a>
       </div>
@@ -353,7 +365,8 @@
           <p class="svc-name">Pacote Completo</p>
           <p style="font-size:13px;margin:var(--space-2) 0 0;color:color-mix(in srgb,var(--color-text) 60%,transparent);line-height:var(--half);">Para quem quer chegar preparado em tudo</p>
         </div>
-        <p class="svc-price">1.500€ <small>/ pacote</small></p>
+        <p class="svc-price"><span class="svc-old">1.200€</span>890€ <small>/ pacote</small></p>
+        <p class="svc-note">Em até 4x.</p>
         <ul class="svc-includes">
           <li>Tudo do acompanhamento do reconhecimento</li>
           <li>Currículo em padrão alemão (Lebenslauf)</li>
