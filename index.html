@@ -113,7 +113,7 @@
     }
 
     /* About split */
-    .about { padding: calc(3 * var(--leading)) 0; }
+    .about { padding: calc(4.5 * var(--leading)) 0 calc(3 * var(--leading)); }
     .about-grid {
       display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
       gap: var(--leading) clamp(32px, 6vw, 96px); align-items: center;
@@ -137,11 +137,11 @@
       margin: 0; text-box: trim-both cap alphabetic;
     }
     .about-copy {
-      font-size: 15.5px; line-height: var(--leading); margin: calc(var(--leading) - 1cap) 0 0;
+      font-size: 15.5px; line-height: var(--leading); margin: calc(1.75 * var(--leading) - 1cap) 0 0;
       color: color-mix(in srgb, var(--color-text) 80%, transparent);
       max-width: 52ch; text-box: trim-both cap alphabetic;
     }
-    .about-copy + .about-copy { margin-top: var(--leading); }
+    .about-copy + .about-copy { margin-top: calc(1.25 * var(--leading)); }
     @media (max-width: 720px) {
       .about-grid { grid-template-columns: 1fr; }
       .about-photo-wrap { justify-content: center; }
@@ -211,7 +211,8 @@
 
     /* FAQ */
     .faq { padding: calc(3 * var(--leading)) 0 calc(2 * var(--leading)); }
-    .faq-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--leading) clamp(24px, 5vw, 80px); margin-top: calc(2 * var(--leading)); }
+    .faq-grid { column-count: 2; column-gap: clamp(24px, 5vw, 80px); margin-top: calc(2 * var(--leading)); }
+    .faq-grid > div { break-inside: avoid; margin-bottom: var(--leading); }
     .faq-q { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 18px; line-height: var(--leading); margin: 0 0 var(--half); text-box: trim-both cap alphabetic; }
     .faq-a { font-size: 15px; line-height: var(--leading); margin: 0; color: color-mix(in srgb, var(--color-text) 76%, transparent); }
 
@@ -243,7 +244,7 @@
     }
     @media (max-width: 880px) {
       .feature { grid-template-columns: 1fr; gap: var(--half); }
-      .faq-grid { grid-template-columns: 1fr; }
+      .faq-grid { column-count: 1; }
     }
     @media (max-width: 720px) {
       .hero { padding-top: calc(2.5 * var(--leading)); }
