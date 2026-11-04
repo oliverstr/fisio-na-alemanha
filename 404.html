@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página não encontrada — Fisio na Alemanha</title>
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#7a8a5e">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<style>
+  :root {
+    --bg: #f5ead8;
+    --surface: #ebddc5;
+    --text: #201e1d;
+    --accent: #c67139;
+    --accent-700: #8c491a;
+    --accent-2: #7a8a5e;
+    --accent-2-200: #e1eecc;
+    --accent-2-800: #3d472b;
+    --muted: #6b6257;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .wrap { width: min(100% - 40px, 720px); margin: 0 auto; }
+  header { padding: 28px 0; }
+  .brand {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    color: var(--text);
+    text-decoration: none;
+  }
+  main { display: grid; align-content: center; padding: 40px 0 80px; }
+  .badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent-2-800);
+    background: var(--accent-2-200);
+    border-radius: 999px;
+    padding: 6px 14px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: clamp(34px, 7vw, 56px);
+    line-height: 1.1;
+    margin: 0 0 16px;
+    text-wrap: balance;
+  }
+  p { margin: 0 0 16px; color: var(--muted); max-width: 52ch; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-700); }
+  .btn-ghost { border-color: var(--accent-2); color: var(--accent-2-800); }
+  .btn-ghost:hover { background: var(--accent-2-200); }
+  footer {
+    padding: 24px 0 40px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #201e1d; --surface: #2e2b25; --text: #f5ead8; --muted: #c0b6a5; }
+    .badge { color: #e1eecc; background: #3d472b; }
+    .btn-ghost { color: #e1eecc; border-color: #7a8a5e; }
+    .btn-ghost:hover { background: #3d472b; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a class="brand" href="/">Fisio na Alemanha</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <span class="badge">Erro 404</span>
+      <h1>Esta página não existe.</h1>
+      <p>O endereço pode ter mudado, ou o link está com um erro de digitação. Todo o conteúdo do site está na página inicial — inclusive serviços, dúvidas frequentes e contato.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/">Ir para a página inicial</a>
+        <a class="btn btn-ghost" href="/#servicos">Ver serviços</a>
+        <a class="btn btn-ghost" href="/#contato">Agendar sessão</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Fisio na Alemanha · Atendimento em português</div>
+  </footer>
+</body>
+</html>
