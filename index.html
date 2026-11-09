@@ -367,6 +367,16 @@
       position: relative; top: -1px;
     }
 
+    /* Guias do blog */
+    .guides { padding: calc(3 * var(--leading)) 0 calc(1 * var(--leading)); }
+    .guides-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--leading) clamp(24px, 5vw, 80px); margin-top: calc(1.5 * var(--leading)); }
+    .guides-grid a { display: block; text-decoration: none; color: inherit; }
+    .guides-grid .g-title { display: block; font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 18px; line-height: var(--leading); color: var(--color-accent-700); }
+    .guides-grid a:hover .g-title { text-decoration: underline; }
+    .guides-grid .g-desc { display: block; font-size: 14.5px; line-height: var(--leading); color: color-mix(in srgb, var(--color-text) 72%, transparent); }
+    .guides-more { margin-top: var(--leading); font-size: 15px; }
+    @media (max-width: 880px) { .guides-grid { grid-template-columns: 1fr; } }
+
     /* FAQ */
     .faq { padding: calc(3 * var(--leading)) 0 calc(2 * var(--leading)); }
     .faq-grid { column-count: 2; column-gap: clamp(24px, 5vw, 80px); margin-top: calc(2 * var(--leading)); }
@@ -417,6 +427,7 @@
   <a href="#como-ajudo">Como ajudo</a>
   <a href="#servicos">Serviços</a>
   <a href="#faq">Dúvidas</a>
+  <a href="/blog/">Blog</a>
   <a href="#contato" class="btn btn-primary" style="text-decoration:none;">Agendar sessão</a>
 </nav>
 
@@ -538,6 +549,15 @@
     </div>
   </section>
 
+  <section class="guides" id="guias">
+    <span class="kicker">Guias gratuitos</span>
+    <h2 style="font-family:var(--font-heading);font-size:clamp(28px,3vw,40px);line-height:calc(1.5*var(--leading));margin:0 0 0;max-width:26ch;text-box:trim-both cap alphabetic;">Entenda o reconhecimento antes de começar.</h2>
+    <div class="guides-grid">
+      <a href="/blog/reconhecimento-diploma-fisioterapeuta-alemanha/"><span class="g-title">Reconhecimento do diploma: passo a passo</span><span class="g-desc">As etapas do Anerkennung, da escolha do estado ao título de Physiotherapeut/in.</span></a>
+    </div>
+    <p class="guides-more"><a href="/blog/">Ver todos os guias do blog</a></p>
+  </section>
+
   <section class="faq" id="faq">
     <span class="kicker">Dúvidas frequentes</span>
     <div class="faq-grid">
@@ -583,7 +603,7 @@
 
   <footer style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-3);">
     <span>© 2026 Fisio na Alemanha</span>
-    <span>Atendimento exclusivo em português · Para fisioterapeutas brasileiros</span>
+    <span><a href="/blog/">Blog</a> · Atendimento exclusivo em português · Para fisioterapeutas brasileiros</span>
   </footer>
 
 </div>
